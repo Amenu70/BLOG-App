@@ -1,4 +1,4 @@
-package cs544.model;
+package cs544.Model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -31,6 +31,8 @@ public class Post {
     private Date updateOn;
 //    @NotBlank
     private String userName;
+    @ManyToOne
+    private User user;
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
 }
