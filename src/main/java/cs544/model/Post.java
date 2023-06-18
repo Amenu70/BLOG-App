@@ -1,15 +1,13 @@
-package cs544.model;
+package cs544.Model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
-import lombok.Getter;
+
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +29,8 @@ public class Post {
     private Date updateOn;
 //    @NotBlank
     private String userName;
+    @ManyToOne
+    private User user;
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
 }

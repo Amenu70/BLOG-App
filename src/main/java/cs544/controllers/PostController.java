@@ -1,25 +1,23 @@
 package cs544.controllers;
 
-import cs544.dto.PostDto;
-import cs544.model.Post;
-import cs544.service.PostService;
+import cs544.DTO.PostDto;
+import cs544.Service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/posts")
+//@RequestMapping("")
 public class PostController {
     @Autowired
     private PostService postService;
-    @PostMapping
-    public ResponseEntity publishPost(@RequestBody PostDto postDto){
-        postService.savePost(postDto);
-        return new ResponseEntity(HttpStatus.OK);
+    @PostMapping("/users/{userId}/post")
+    public ResponseEntity publishPost(@RequestBody PostDto postDto,@PathVariable Integer userId){
+        PostDto createdPost=postService.savePost(userId,postDto);
+        return new ResponseEntity(createdPost,HttpStatus.OK);
     }
     @GetMapping
     public ResponseEntity<List<PostDto>> posts(){
