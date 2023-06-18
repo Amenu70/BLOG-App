@@ -1,7 +1,7 @@
 package cs544.service;
 
-import cs544.model.Comment;
-import cs544.model.Post;
+import cs544.Model.Comment;
+import cs544.Model.Post;
 import cs544.repository.CommentRepository;
 import jakarta.persistence.ManyToOne;
 import org.springframework.beans.factory.annotation.Autowired;
