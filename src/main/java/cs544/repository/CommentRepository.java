@@ -1,4 +1,4 @@
-package cs544.repository;
+package cs544.Repository;
 
 import cs544.Model.Comment;
 import cs544.Model.Post;

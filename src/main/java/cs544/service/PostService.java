@@ -4,7 +4,7 @@ import cs544.DTO.PostDto;
 import cs544.Exception.ResourceNotFoundException;
 import cs544.Model.User;
 import cs544.Repository.IUserRepository;
-import cs544.exception.PostNotFoundException;
+import cs544.Exception.PostNotFoundException;
 import cs544.Model.Post;
 import cs544.Repository.PostRepository;
 import org.modelmapper.ModelMapper;
